@@ -9,6 +9,7 @@
 #	LICENSE: Apache 2.0
 #
 #====================================================================================
+set -o nounset			# treat unset variables as errors
 set -o errexit			# exit script when command fails
 
 # PHP Version to install
@@ -227,24 +228,24 @@ SCRIPT_FILE="ctl-services.sh"
 
 cat > ~/${SCRIPT_FILE} << EOF
 #!/bin/bash
-case "${1:-''}" in
+case \${1:-''} in
   'start');;
   'stop');;
   'restart');;
   'status');;
   *)
-    echo "Usage: $SELF start|stop|restart|status"
+    echo "Usage: \$SELF start|stop|restart|status"
     exit 1
   ;;
 esac
 SERVICES=( php-fpm nginx mysql redis-server )
-for i in "${SERVICES[@]}"
+for i in \${SERVICES[@]}
 do
-  if [ $i == 'php-fpm' ]
+  if [ \$i == 'php-fpm' ]
     then
-        sudo service php7.3-fpm $1
+        sudo service php$PHP-fpm \$1
     else
-        sudo service $i $1
+        sudo service \$i \$1
   fi
 done
 EOF
