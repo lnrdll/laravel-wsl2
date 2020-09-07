@@ -1,7 +1,5 @@
 # laravel-wsl2
 
-# laravel-wsl
-
 Bootstrap script to configure a Laravel **development** environment on Windows Systems for Linux. For WSL setup, checkout the [laravel-wsl](https://github.com/rlunardelli/laravel-wsl) repository.
 
 ## Setup
