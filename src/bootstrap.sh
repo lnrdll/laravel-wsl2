@@ -162,6 +162,9 @@ composer global require hirak/prestissimo &> /dev/null
 echoinfo "Setup Laravel Installer"
 composer global require laravel/installer &> /dev/null
 
+echoinfo "Setup IDE helper"
+composer require --dev barryvdh/laravel-ide-helper &> /dev/null
+
 cat >> ~/.bashrc << EOF
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 EOF
