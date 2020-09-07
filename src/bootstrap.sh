@@ -123,7 +123,7 @@ sudo apt-get install -y php-xdebug \
 
 # https://github.com/nodesource/distributions/blob/master/README.md
 echoinfo "Install Nodejs"
-curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &> /dev/null
+curl -sL https://deb.nodesource.com/setup_$NODEJS.x | sudo -E bash - &> /dev/null
 sudo apt-get install -y nodejs &> /dev/null
 
 #-------------------------------------------------------------------------------------
