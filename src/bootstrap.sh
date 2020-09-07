@@ -4,7 +4,7 @@
 #
 #	FILE: bootstrap.sh
 #
-#	DESCRIPTION: Bootstrap Laravel Dev Environment for WSL2 Debian
+#	DESCRIPTION: Bootstrap Laravel Dev Environment for WSL2 Ubuntu
 #
 #	LICENSE: Apache 2.0
 #
@@ -29,7 +29,7 @@ __check_command_exists() {
 #   DESCRIPTION:  Check if is Debian.
 #-------------------------------------------------------------------------------------
 __check_debian() {
-    cat /etc/os-release | grep -v grep | grep Debian > /dev/null 2>&1
+    cat /etc/os-release | grep -v grep | grep Ubuntu > /dev/null 2>&1
 }
 
 #---  FUNCTION  ----------------------------------------------------------------------
@@ -81,7 +81,7 @@ function echowarn() {
 #  Simple warning notification and validation
 #-------------------------------------------------------------------------------------
 if [ __check_debian ]; then
-    echowarn "This script has only been tested on a Debian system. Run it at your own discretion."
+    echowarn "This script has only been tested on Ubuntu. Run it at your own discretion."
 fi
 
 echowarn "This setup is NOT suited for production deployments.\n"
