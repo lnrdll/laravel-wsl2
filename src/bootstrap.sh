@@ -156,9 +156,6 @@ fi
 echoinfo "Update composer"
 composer global update &> /dev/null
 
-echoinfo "Install composer prestissimo"
-composer global require hirak/prestissimo &> /dev/null
-
 echoinfo "Setup Laravel Installer"
 composer global require laravel/installer &> /dev/null
 
